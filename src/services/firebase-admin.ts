@@ -1,11 +1,10 @@
 import * as admin from 'firebase-admin';
 import {getFirestore} from 'firebase-admin/firestore';
 import {getStorage} from 'firebase-admin/storage';
-
-import * as serviceAccount from './firebase-application-credentials.json';
+import serviceAccount from '../config/serviceAccount';
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
+  credential: admin.credential.cert(serviceAccount),
 });
 
 export const db = getFirestore();
