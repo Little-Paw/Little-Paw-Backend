@@ -1,20 +1,49 @@
 {
   "name": "littlepawback",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Little Paw's backend application",
+  "main": "build/index.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "eslint . --ext .ts",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Little Paw Organization",
+  "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
-  }
+    "@types/cors": "^2.8.13",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "ts-node-dev": "^2.0.0",
+    "tslint": "^6.1.3",
+    "typescript": "^5.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Little-Paw/Little-Paw-Backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Little-Paw/Little-Paw-Backend/issues"
+  },
+  "homepage": "https://github.com/Little-Paw/Little-Paw-Backend#readme"
 }
