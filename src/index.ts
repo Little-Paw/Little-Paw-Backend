@@ -1,6 +1,7 @@
 import express, {Application} from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import apiRouter from './routes/api';
 
 dotenv.config();
 
@@ -17,6 +18,8 @@ app.use(
     allowedHeaders: ['Content-Type', 'Authorization'],
   }),
 );
+
+app.use('/api', apiRouter);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
