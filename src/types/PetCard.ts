@@ -10,5 +10,5 @@ export default interface PetCard {
   type: PetType;
   gender: PetGender;
   image: string;
-  distanceMeter: number;
+  location: string;
 }

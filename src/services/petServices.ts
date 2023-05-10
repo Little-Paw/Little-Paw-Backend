@@ -1,5 +1,4 @@
 import PetCard from '../types/PetCard';
-import {PetType} from '../types/PetType';
 import PetUpload from '../types/PetUpload';
 import {db, storage} from './firebase-admin';
 import type {File} from '@google-cloud/storage/build/src/file';
@@ -72,13 +71,13 @@ export const uploadPet = async (
       const petToSave: PetCard = {
         id: undefined,
         name: pet.name,
-        age: 10,
+        age: pet.age,
         breed: pet.breed,
         description: pet.description,
-        type: PetType.OTHER,
+        type: pet.type,
         gender: pet.gender,
         image: url,
-        distanceMeter: 100,
+        location: pet.location,
       };
 
       petRef

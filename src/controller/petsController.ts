@@ -18,7 +18,7 @@ export const getPetList = async (req: Request, res: Response) => {
       type: petData.type,
       gender: petData.gender,
       image: petData.image,
-      distanceMeter: petData.distanceMeter,
+      location: petData.location,
     });
   });
   res.json(pets);
